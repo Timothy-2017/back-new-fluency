@@ -11,7 +11,6 @@ module Api
           # byebug
           render json: {translated_article: params[:english_article][:description]}
         else
-          # article = Article.find_by(id: params[:display_article_id])
           # byebug
           article = Article.find_by(id: params[:english_article]["id"])
           words_array = article.description.split(' ')
