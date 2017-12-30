@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  resources :favorites
-  resources :translations
-  # resources :user_words
-  # resources :article_words
-  # resources :articles_users
-
-
   namespace :api do
     namespace :v1 do
       resources :languages
@@ -13,6 +6,7 @@ Rails.application.routes.draw do
       resources :articles
       resources :users
       resources :translations
+      resources :favorites
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
