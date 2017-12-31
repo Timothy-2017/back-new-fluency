@@ -10,7 +10,7 @@ module Api
           translated = Translation.find(favorite.translation_id)
           word = Word.find(translated.word_id)
           user = User.find(favorite.user_id)
-          favorites_array.push({ word: word.text, translated: translated.text, user_id: user.id, id: favorite.id})
+          favorites_array.push({ word: word.text, translated: translated.text, user_id: user.id, id: favorite.id, note: favorite.note})
         end
 
         render json: favorites_array
@@ -30,6 +30,18 @@ module Api
       def destroy
         favorite = Favorite.find(params[:id])
         favorite.destroy
+      end
+
+      def edit
+        favorite = Favorite.find(params[:id])
+      end
+
+      def update
+        # byebug
+        favorite = Favorite.find(params[:id])
+        favorite.update(note: params[:note])
+
+        render json: favorite
       end
     end
   end
