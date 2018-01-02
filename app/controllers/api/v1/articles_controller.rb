@@ -15,8 +15,9 @@ module Api
         article_arr = []
         articles = news_response.parsed_response["articles"]
         articles.map do |article|
-          article = article["title"].concat('. ').concat(article["description"])
-          article_arr.push(article)
+          article_text = article["title"].concat('. ').concat(article["description"])
+          article_url = article["urlToImage"]
+          article_arr.push({article_text: article_text, article_url: article_url})
         end
         # byebug
         render json: article_arr
