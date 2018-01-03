@@ -10,3 +10,7 @@ Language.create(name: 'Spanish', code: 'es')
 Language.create(name: 'French', code: 'fr')
 Language.create(name: 'German', code: 'de')
 Language.create(name: 'Italian', code: 'it')
+
+User.create(name: "alex", password: "alex")
+User.create(name: "meryl", password: "meryl")
+User.create(name: "es", password: "es")
